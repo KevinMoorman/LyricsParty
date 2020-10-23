@@ -1,0 +1,327 @@
+<!DOCTYPE html> <!-- This tag defines the document type and HTML version -->
+<html> <!-- HTML Start -->
+    <head> <!-- Header Start -->
+        <!-- Document header related tags-->
+        <title>The Lyrics Party</title> <!-- This is the page title -->
+        <!-- include CSS sheet -->
+        <!-- <link rel="stylesheet" type="text/css" href="CSS/cssStyleSheet.css"> -->
+
+        <style>
+            .middle {  /* vertical centered items in div */
+                padding: 15px 0;
+            }
+            .centered { /* center alignment */
+                text-align: center;
+            }
+            .spaced { /* space lettering wide */
+                letter-spacing: 4px;
+            }
+            span.text { /* inline spacing of individual texts inside a div */
+                display: inline;
+                padding: 15px;
+            }
+            #head1 { /* main heading */
+                float:none;
+                color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 15px;
+                background-color: yellow;
+                /*width:100%; */
+                padding: 10px;
+            }
+            #head2 { /* menu heading below main heading */
+                float: none;
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 10px;
+                background-color: rgb(60, 65, 70);
+                /* width: 100%; */
+                padding: 7px;
+            }
+            body { /* this is the main style of the webpage body */
+                background-color: white;
+                margin: 90px;
+                border: solid 10px gray;
+                min-width: 500px; /* no more narrow than 500px */
+                max-width: 900px; /* if too wide the elements become spaced too far */
+            }
+            #head3 { /* album title heading */
+                color: yellow;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: x-large;
+                text-align: left;
+                text-transform: uppercase; /* upper case transform */
+            }
+            #head4 { /* album subtitle heading */
+                color: white;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: medium;
+                text-align: left;
+                text-transform: uppercase; /* upper case transform */
+            }
+            #head5 { /* album sub-subtitle heading */
+                color: white;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: small;
+                text-align: left;
+                text-transform: uppercase; /* upper case transform */
+                padding-top: 15px;
+                /*line-height: 350%; /* extra line spacing for this heading */
+            }
+            .left-column { /* defines left-most column of 3 divs side-by-side */
+                float:left;
+                width:30%;
+                background-color:red;
+            }
+            .right-column { /* defines right-most column of 3 divs side-by-side */
+                float:right;
+                width:30%;
+                background-color:green;
+                text-align: center;
+            }
+            .center-column { /* defines center column of 3 divs side-by-side */
+                margin:auto;
+                width:30%;
+                background-color:blue;
+            }
+            .crop-height { /* crop image to 200px height */
+                max-height: 200px;
+                overflow: hidden;
+            }
+            img.scale { /* scale image from top left corner */
+	            display: block; /* corrects small inline gap at bottom of containing div */
+                width: 100%;
+	            height: auto !important; /* force correct aspect ratio */
+	            min-height: 200px; /* max-height of .crop-height */
+            }
+            img.small { /* scale image to 170px for song title */
+                width: 170px; /* fits into 85% of the div , rest is margin */
+                height: auto !important; /* force correct aspect ratio */
+            }
+            .transparent { /* div with transparent background by 200px high, 70% wide */
+                width: 70%;
+                height: 200px;
+                display: inline-block;
+                background-color: rgba(60, 65, 70, .8); /* dark grey with 80% opacity */
+            }
+            .clear { /* div with clear background by 70% wide */
+                width: 70%;
+                display: inline-block;
+            }
+            .left-title { /* left side of song title */
+                margin-right : 200px;
+                height: 200px;
+            }
+            .right-title { /* right side of song title */
+                display: table-cell; /* this allows img to be centered perfectly */
+                float: right;
+                width: 200px;
+                height: 200px;
+                text-align: center;
+                vertical-align: middle; /* album cover img centered in right side portion of title */
+            }
+            .left-lyrics { /* left side of lyrics page "verse and chorus" */
+                /*border: 1px solid red;*/
+                float: left;
+                width: 60%;
+                text-align: left;
+            }
+            .right-lyrics { /* right side of lyrics "about the song" */
+                /*border: 1px solid blue;*/
+                float: none;
+                display: inline-block;
+                width: 40%;
+                text-align: left;
+            }
+            .block-header { /* define a block in which to show VERSE-CHORUS */
+                display: inline-block;
+                color: grey;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: medium;
+                text-transform: uppercase; /* upper case transform */
+                background-color: yellow;
+                padding: 10px 10px;
+            }
+            .block-body { /* define a block to show below VERSE-CHORUS */
+                color: grey;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: small;
+                padding-left: 15px; /* space it to the right by 15px */
+                padding-top: 15px; /* space it below the heading by 15px */
+                border-left: 5px solid yellow; /* yellow line on the left */
+            }
+            .block-header2 { /* define a block header in which to show ABOUT THE SONG */
+                color: grey;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: medium;
+                text-transform: uppercase; /* upper case transform */
+                background-color: yellow;
+                padding: 10px 10px;
+            }
+            .block-body2 { /* define a block to show below ABOUT THE SONG */
+                color: white;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: small;
+                background-color: grey;
+            }
+            .indent15 { /* indent a div by 15px all over */
+                padding: 15px 15px;
+            }
+            hr.grey { /* use this above the video block */
+                 border-top: 2px solid lightgray;
+                 width: 80%;
+                 margin-left: auto;
+                 margin-right: auto;
+            }
+            hr.yellow { /* use this at the bottom of the page */
+                 border-top: 2px solid yellow;
+                 width: 100%;
+                 margin-left: auto;
+                 margin-right: auto;
+            }
+            #bottom-line { /* bottom-most line of page */
+                color: grey;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: x-small;
+                padding-left: 15px; /* space it to the right by 15px */
+                padding-top: 10px; /* space it below the heading by 10px */
+            }
+            #bottom-url { /* define a block in which to show reference URL */
+                display: inline-block;
+                color: grey;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: x-small;
+                background-color: yellow;
+                padding: 5px 5px;
+            }
+        </style>
+
+    </head> <!-- Header End -->
+    <body>  <!-- Body Start -->
+        
+        <!-- sample table turned off
+        <div style="float: left; background-color: seagreen; width=25%; text-align: right;">Column 1<br>Hello! There!</div>
+        <div style="float: right; background-color: slateblue; width=25%;">Column 3<br>z</div>
+        <div style="background-color: tan; text-align: center;">Column 2<br>Another line!</div>
+        -->
+        
+        <!-- another sample table turned off
+        <div id="container">
+            <section class="left-column">THIS IS COLUMN 1 LEFT</section>
+            <section class="right-column">THIS IS COLUMN 3 RIGHT</section>
+            <section class="center-column">THIS IS COLUMN 2 CENTER</section>
+        </div>
+        -->
+
+        <!-- main heading -->
+        <div id="head1" class="centered spaced">THE LYRICS PARTY</div>
+        
+        <!-- a small menu of options -->
+        <div id="head2" class="centered">
+            <span class="text">home</span>
+            <span class="text">top songs</span>
+            <span class="text">community</span>
+        </div>
+        
+        <!-- background image -->
+        <div style="height: 0px;"> <!-- allows overwrite of background image -->
+            <div class="crop-height"> <!-- only display top 200px of background image -->
+                <img class="scale" src="images/talking_heads-speaking_in_tongues.png" alt="Talking Heads Album Cover">
+            </div>
+        </div>
+
+        <!-- song title -->
+        <div style="text-align: center;"> <!-- center all remaining content on the page -->
+            <div class="transparent"> <!-- 200px high 70% wide semi-transparent background -->
+                <div> <!-- song title divided into two portions: right and left -->
+                    <section class="right-title"> <!-- 200px square section for album img -->
+                        <div class="middle"> <!-- middle style to place album img in centre -->
+                            <img class="small" src="images/talking_heads-speaking_in_tongues.png" alt="Talking Heads Album Cover">
+                        </div>
+                    </section>
+                    <section class="left-title">
+                        <div style="padding: 25px 10px;"> <!-- space text inwards 25px from the top, 10px from the left -->
+                            <div id="head3">This Must Be The Place (Naive Melody)</div> <!-- song title -->
+                            <div id="head4">Talking Heads</div> <!-- performer -->
+                            <div id="head5">Album: Speaking in Tongues</div> <!-- album name -->
+                        </div>
+                    </section>
+                </div>
+            </div> <!-- end of the semi-transparent song title -->
+
+            <div class="clear"> <!-- 70% wide clear background -->
+                <div> <!-- lyrics divided into two portions: left and right -->
+                    <section class="left-lyrics">
+                        <div class="indent15"> <!-- indent everything 15px -->
+                            <div class="block-header">[Verse 1]</div>
+                            <div class="block-body">Home is where I want to be<br>
+                            Pick me up and turn me round<br>
+                            I feel numb, born with a weak heart<br>
+                            I guess I must be having fun<br>
+                            The less we say about it, the better<br>
+                            Make it up as we go along<br>
+                            Feet on the ground, head in the sky<br>
+                            It's okay, I know nothing's wrong, nothing</div>
+                    
+                            <div class="indent15"> <!-- indent chorus 15px -->
+                                <div class="block-header">[Chorus]</div>
+                                <div class="block-body">Hi-yeah, I got plenty of time<br>
+                                Hi-yeah, you got light in your eyes<br>
+                                And you're standing here beside me<br>
+                                I love the passing of time<br>
+                                Never for money, always for love<br>
+                                Cover up and say goodnight, say goodnight</div>
+                            </div>
+                    
+                            <div class="block-header">[Verse 2]</div>
+                            <div class="block-body">Home is where I want to be<br>
+                            But I guess I'm already there<br>
+                            I come home, she lifted up her wings<br>
+                            I guess that this must be the place<br>
+                            I can't tell one from the other<br>
+                            Did I find you or you find me?<br>
+                            There was a time before we were born<br>
+                            If someone asks, this is where I'll be, where I'll be</div>
+                    
+                            <div class="indent15"> <!-- indent chorus 15px -->
+                                <div class="block-header">[Chorus]</div>
+                                <div class="block-body">Hi-yeah, we drift in and out<br>
+                                Hi-yeah, sing into my mouth<br>
+                                Out of all those kinds of people<br>
+                                You got a face with a view<br>
+                                I'm just an animal looking for a home<br>
+                                Share the same space for a minute or two<br>
+                                And you love me 'til my heart stops<br>
+                                Love me 'til I'm dead<br>
+                                Eyes that light up, eyes look through you<br>
+                                Cover up the blank spots, hit me on the head, ah-ooh</div>
+                            </div>
+                        </div>
+                    </section>
+    
+                    <section class="right-lyrics">
+                        <div class="indent15"> <!-- indent everything 15px -->
+                            <div class="block-header2">About the song</div>
+                            <div class="block-body2">
+                                <div class="indent15">
+                                    "This Must Be the Place (Naive Melody)" is a song by new wave band Talking Heads, released in November 1983 as the second single from their fifth album Speaking in Tongues. The lyrics were written by David Byrne, and the music was written by Byrne and the other members of the band, Chris Frantz, Tina Weymouth and Jerry Harrison.<br/><br/>
+                                    In the "Self Interview" on the DVD of the concert film Stop Making Sense, Byrne states that it is a love song, a topic he tends to avoid because it is "kinda big." He also said of the song:<br/><br/>
+                                    <div style="padding-left: 30px;">That's a love song made up almost completely of non sequiturs, phrases that may have a strong emotional resonance but don't have any narrative qualities. It's a real honest kind of love song. I don't think I've ever done a real love song before. Mine always had a sort of reservation, or a twist. I tried to write one that wasn't corny, that didn't sound stupid or lame the way many do. I think I succeeded; I was pretty happy with that.[1]</div>
+                                </div>
+                                <hr class="grey"> <!-- horizontal line above video block -->
+                                <br/>
+				<iframe width="220" height="124" src="https://player.vimeo.com/video/104185796?portrait=0" frameborder="0"></iframe>
+                                
+
+                            </div> <!-- end of block body2 -->
+                        </div> <!-- end of indented div inside right-lyrics div -->
+                    </section> <!-- end of right-lyrics section with grey background -->
+                </div> <!-- end of the lyrics portion of the page -->
+            </div> <!-- this marks the bottom of the 70% clear-background portion -->
+        </div> <!-- this marks the bottom of the page -->
+
+        <hr class="yellow"> <!-- horizontal line at bottom of page -->
+        <div id="bottom-line">1 (n.d.). This Must Be the Place (Naive Melody) - Wikipedia. Retrieved July 4, 2018, from <a id="bottom-url" href="https://en.wikipedia.org/wiki/This_Must_Be_the_Place_(Naive_Melody)">https://en.wikipedia.org/wiki/This_Must_Be_the_Place_(Naive_Melody)</a></div>
+        <br/> <!-- gap at bottom of page -->
+    </body>
+</html> <!-- HTML End -->

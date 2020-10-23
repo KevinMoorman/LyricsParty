@@ -1,0 +1,17 @@
+body {
+    background-color: rebeccapurple;
+    margin: 90px;
+    border: solid 10px gainsboro;
+}
+h1 {
+    color: red;
+    font-style: oblique;
+    font-size: x-large;
+    text-align: center;
+}
+#topblock {
+    background-color: orangered;
+    color: white;
+    height: 50px;
+    text-align: center;
+}
